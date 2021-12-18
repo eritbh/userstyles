@@ -1,12 +1,12 @@
 /* ==UserStyle==
 @name           Un-fuck Fandom
 @namespace      github.com/openstyles/stylus
-@version        1.2.1
+@version        1.2.2
 @description    Gets rid of stupid crap from Fandom wikis
 @author         eritbh
 @license        WTFPL
 
-@updateURL https://github.com/eritbh/userstyles/raw/main/un-fuck-fandom.user.css
+@updateURL https://raw.githubusercontent.com/eritbh/userstyles/main/un-fuck-fandom.user.css
 
 @preprocessor stylus
 @var checkbox hideGlobalNav "Hide Fandom global navbar" 1

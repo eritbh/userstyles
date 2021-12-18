@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Un-fuck Fandom
 @namespace      github.com/openstyles/stylus
-@version        1.2.0
+@version        1.2.1
 @description    Gets rid of stupid crap from Fandom wikis
 @author         eritbh
 
@@ -15,14 +15,17 @@
 @var checkbox hideAllSidebars "Hide right sidebar on all wikis" 0
 @var checkbox hideNetworkFooter "Hide Fandom content below article" 1
 @var checkbox hideMainFooter "Hide global Fandom footer" 1
+@var checkbox fixDiscordWidgets "Fix alignment of Discord widgets in sidebars" 1
 ==/UserStyle== */
 
 @-moz-document domain("fandom.com") {
 	/* Align Discord widgets properly in sidebars */
-	.discord-widget-container {
-		width: auto;
-		margin-right: 0;
-		margin-left: 0;
+	if fixDiscordWidgets {
+		.discord-widget-container {
+			width: auto;
+			margin-right: 0;
+			margin-left: 0;
+		}
 	}
 
 	if hideStickyHeader {

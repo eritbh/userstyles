@@ -1,12 +1,13 @@
 /* ==UserStyle==
 @name           Un-fuck Fandom
 @namespace      github.com/openstyles/stylus
-@version        1.0.2
+@version        1.1.0
 @description    Gets rid of stupid crap from Fandom wikis
 @author         eritbh
 ==/UserStyle== */
 
 @-moz-document domain("fandom.com") {
+	/* Hide bullshit */
 	.global-navigation,
 	.wikia-bar-anon.wikia-bar,
 	.is-visible.fandom-sticky-header,
@@ -16,8 +17,16 @@
 		display: none !important;
 	}
 
+	/* Widen main container to take up space left behind by network nav */
 	.main-container {
 		margin-left: 0 !important;
 		width: auto !important;
+	}
+	
+	/* Align Discord widgets properly in sidebars */
+	.discord-widget-container {
+		width: auto;
+		margin-right: 0;
+		margin-left: 0;
 	}
 }

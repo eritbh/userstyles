@@ -12,7 +12,8 @@
 	.is-visible.fandom-sticky-header,
 	.page-side-tools,
 	.premium-recirculation-rail.popular-pages,
-	#mixed-content-footer {
+	#mixed-content-footer,
+	#WikiaBar {
 		display: none !important;
 	}
 

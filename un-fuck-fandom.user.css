@@ -1,32 +1,94 @@
 /* ==UserStyle==
 @name           Un-fuck Fandom
 @namespace      github.com/openstyles/stylus
-@version        1.1.0
+@version        1.2.0
 @description    Gets rid of stupid crap from Fandom wikis
 @author         eritbh
+
+@preprocessor stylus
+@var checkbox hideGlobalNav "Hide Fandom global navbar" 1
+@var checkbox hideStickyHeader "Hide sticky header when scrolling" 1
+@var checkbox hideWikiaBar "Hide bottom right ad bar" 1
+@var checkbox hideSideButtons "Hide floating page buttons" 0
+@var checkbox hidePopularPages "Hide \"Popular Pages\" sidebar section" 1
+@var checkbox hideGamepediaSidebars "Hide right sidebar on old Gamepedia wikis which don't use it" 1
+@var checkbox hideAllSidebars "Hide right sidebar on all wikis" 0
+@var checkbox hideNetworkFooter "Hide Fandom content below article" 1
+@var checkbox hideMainFooter "Hide global Fandom footer" 1
 ==/UserStyle== */
 
 @-moz-document domain("fandom.com") {
-	/* Hide bullshit */
-	.global-navigation,
-	.wikia-bar-anon.wikia-bar,
-	.is-visible.fandom-sticky-header,
-	.premium-recirculation-rail.popular-pages,
-	#mixed-content-footer,
-	#WikiaBar {
-		display: none !important;
-	}
-
-	/* Widen main container to take up space left behind by network nav */
-	.main-container {
-		margin-left: 0 !important;
-		width: auto !important;
-	}
-	
 	/* Align Discord widgets properly in sidebars */
 	.discord-widget-container {
 		width: auto;
 		margin-right: 0;
 		margin-left: 0;
+	}
+
+	if hideStickyHeader {
+		.fandom-sticky-header {
+			display: none !important;
+		}
+	}
+
+	if hideGlobalNav {
+		.global-navigation {
+			display: none !important;
+		}
+
+		/* Widen main container to take up space left behind by network nav */
+		.main-container {
+			margin-left: 0 !important;
+			width: auto !important;
+		}
+		
+		/* Also widen sticky nav in case someone wants to use that still */
+		.fandom-sticky-header {
+			left: 0 !important;
+		}
+	}
+	
+	if hideWikiaBar {
+		.wikia-bar-anon.wikia-bar,
+		#WikiaBar {
+			display: none !important;
+		}
+
+	}
+	
+	if hideSideButtons {
+		.page-side-tools__wrapper {
+			display: none !important;
+		}
+	}
+	
+	if hidePopularPages {
+		.premium-recirculation-rail.popular-pages {
+			display: none !important;
+		}
+	}
+	
+	if hideGamepediaSidebars {
+		.is-gamepedia .page__right-rail {
+			display: none !important;
+		}
+	}
+	
+	if hideAllSidebars {
+		.page__right-rail {
+			display: none !important;
+		}
+	}
+	
+	if hideNetworkFooter {
+		#mixed-content-footer {
+			display: none !important;
+		}
+	}
+	
+	if hideMainFooter {
+		.wds-global-footer {
+			display: none !important;
+		}
 	}
 }

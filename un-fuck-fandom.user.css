@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Un-fuck Fandom
 @namespace      github.com/openstyles/stylus
-@version        1.0.0
+@version        1.0.2
 @description    Gets rid of stupid crap from Fandom wikis
 @author         eritbh
 ==/UserStyle== */
@@ -11,7 +11,8 @@
 	.wikia-bar-anon.wikia-bar,
 	.is-visible.fandom-sticky-header,
 	.premium-recirculation-rail.popular-pages,
-	#mixed-content-footer {
+	#mixed-content-footer,
+	#WikiaBar {
 		display: none !important;
 	}
 

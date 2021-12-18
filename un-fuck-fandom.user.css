@@ -4,6 +4,9 @@
 @version        1.2.1
 @description    Gets rid of stupid crap from Fandom wikis
 @author         eritbh
+@license        WTFPL
+
+@updateURL https://github.com/eritbh/userstyles/raw/main/un-fuck-fandom.user.css
 
 @preprocessor stylus
 @var checkbox hideGlobalNav "Hide Fandom global navbar" 1

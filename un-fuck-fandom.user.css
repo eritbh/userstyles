@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Un-fuck Fandom
 @namespace      github.com/openstyles/stylus
-@version        1.2.2
+@version        1.2.3
 @description    Gets rid of stupid crap from Fandom wikis
 @author         eritbh
 @license        WTFPL
@@ -78,11 +78,19 @@
 		.is-gamepedia .page__right-rail {
 			display: none !important;
 		}
+		
+		.is-gamepedia .page.has-right-rail .page__main {
+			border-radius: 3px !important;
+		}
 	}
 	
 	if hideAllSidebars {
 		.page__right-rail {
 			display: none !important;
+		}
+		
+		.page.has-right-rail .page__main {
+			border-radius: 3px !important;
 		}
 	}
 	

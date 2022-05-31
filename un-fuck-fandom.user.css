@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Un-fuck Fandom
 @namespace      github.com/openstyles/stylus
-@version        1.3.0
+@version        1.3.1
 @description    Gets rid of stupid crap from Fandom wikis
 @author         eritbh
 @license        WTFPL
@@ -11,14 +11,17 @@
 @preprocessor stylus
 @var checkbox hideGlobalNav "Hide Fandom global navbar" 1
 @var checkbox hideStickyHeader "Hide sticky header when scrolling" 1
-@var checkbox hideWikiaBar "Hide bottom right ad bar" 1
+@var checkbox hideWikiaBar "Hide bottom right bar (displays ads when not logged in)" 1
 @var checkbox hideVideos "Hide videos appearing at the top of pages" 1
 @var checkbox hideSideButtons "Hide floating page buttons" 0
 @var checkbox hidePopularPages "Hide \"Popular Pages\" sidebar section" 1
 @var checkbox hideGamepediaSidebars "Hide right sidebar on old Gamepedia wikis which don't use it" 1
 @var checkbox hideAllSidebars "Hide right sidebar on all wikis" 0
+@var checkbox hideRecommendedPages "Hide \"Others like you also viewed\"" 0
+@var checkbox hideComments "Hide comment section" 0
 @var checkbox hideNetworkFooter "Hide Fandom content below article" 1
 @var checkbox hideMainFooter "Hide global Fandom footer" 1
+@var checkbox hideSurveyPopup "Hide survey popup" 1
 @var checkbox fixDiscordWidgets "Fix alignment of Discord widgets in sidebars" 1
 ==/UserStyle== */
 
@@ -48,66 +51,84 @@
 			margin-left: 0 !important;
 			width: auto !important;
 		}
-		
+
 		/* Also widen sticky nav in case someone wants to use that still */
 		.fandom-sticky-header {
 			left: 0 !important;
 		}
 	}
-	
+
 	if hideWikiaBar {
 		.wikia-bar-anon.wikia-bar,
 		#WikiaBar {
 			display: none !important;
 		}
 	}
-	
+
 	if hideVideos {
 		#featured-video__player-container {
 			display: none !important;
 		}
 	}
-	
+
 	if hideSideButtons {
 		.page-side-tools__wrapper {
 			display: none !important;
 		}
 	}
-	
+
 	if hidePopularPages {
 		.premium-recirculation-rail.popular-pages {
 			display: none !important;
 		}
 	}
-	
+
 	if hideGamepediaSidebars {
 		.is-gamepedia .page__right-rail {
 			display: none !important;
 		}
-		
+
 		.is-gamepedia .page.has-right-rail .page__main {
 			border-radius: 3px !important;
 		}
 	}
-	
+
 	if hideAllSidebars {
 		.page__right-rail {
 			display: none !important;
 		}
-		
+
 		.page.has-right-rail .page__main {
 			border-radius: 3px !important;
 		}
 	}
-	
+
+	if hideRecommendedPages {
+		.render-wiki-recommendations {
+			display: none !important;
+		}
+	}
+
+	if hideComments {
+		#articleComments {
+			display: none !important;
+		}
+	}
+
 	if hideNetworkFooter {
 		#mixed-content-footer {
 			display: none !important;
 		}
 	}
-	
+
 	if hideMainFooter {
-		.wds-global-footer {
+		.wds-global-footer, .global-footer {
+			display: none !important;
+		}
+	}
+
+	if hideSurveyPopup {
+		#SurveyModule {
 			display: none !important;
 		}
 	}

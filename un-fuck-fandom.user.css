@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Un-fuck Fandom
 @namespace      github.com/openstyles/stylus
-@version        1.2.3
+@version        1.3.0
 @description    Gets rid of stupid crap from Fandom wikis
 @author         eritbh
 @license        WTFPL
@@ -12,6 +12,7 @@
 @var checkbox hideGlobalNav "Hide Fandom global navbar" 1
 @var checkbox hideStickyHeader "Hide sticky header when scrolling" 1
 @var checkbox hideWikiaBar "Hide bottom right ad bar" 1
+@var checkbox hideVideos "Hide videos appearing at the top of pages" 1
 @var checkbox hideSideButtons "Hide floating page buttons" 0
 @var checkbox hidePopularPages "Hide \"Popular Pages\" sidebar section" 1
 @var checkbox hideGamepediaSidebars "Hide right sidebar on old Gamepedia wikis which don't use it" 1
@@ -59,7 +60,12 @@
 		#WikiaBar {
 			display: none !important;
 		}
-
+	}
+	
+	if hideVideos {
+		#featured-video__player-container {
+			display: none !important;
+		}
 	}
 	
 	if hideSideButtons {

@@ -11,7 +11,7 @@
 @preprocessor stylus
 @var checkbox hideGlobalNav "Hide Fandom global navbar" 1
 @var checkbox hideStickyHeader "Hide sticky header when scrolling" 1
-@var checkbox hideWikiaBar "Hide bottom right ad bar" 1
+@var checkbox hideWikiaBar "Hide bottom right bar (displays ads when not logged in)" 1
 @var checkbox hideVideos "Hide videos appearing at the top of pages" 1
 @var checkbox hideSideButtons "Hide floating page buttons" 0
 @var checkbox hidePopularPages "Hide \"Popular Pages\" sidebar section" 1

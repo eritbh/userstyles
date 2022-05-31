@@ -107,7 +107,7 @@
 	}
 	
 	if hideMainFooter {
-		.wds-global-footer {
+		.wds-global-footer, .global-footer {
 			display: none !important;
 		}
 	}

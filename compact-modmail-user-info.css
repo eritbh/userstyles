@@ -1,0 +1,53 @@
+/* ==UserStyle==
+@name           Compact Modmail User Info
+@namespace      github.com/openstyles/stylus
+@version        1.0.0
+@description    Condenses user information in the Reddit modmail sidebar to make more space for
+@author         eritbh
+@license        WTFPL
+
+@updateURL https://raw.githubusercontent.com/eritbh/userstyles/main/compact-modmail-user-info.css
+
+@preprocessor stylus
+@var checkbox hideSnoo "Completely hide snoovatars" 0
+==/UserStyle== */
+
+@-moz-document domain("mod.reddit.com") {
+	if hideSnoo {
+		.ModIdCard__snoovatarContainer {
+			display: none;
+		}
+		.ModIdCard {
+			padding-top: 20px;
+		}
+	} else {
+		.ModIdCard {
+			height: 100px;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			position: relative;
+			margin-top: 20px;
+			padding-left: 85px;
+		}
+		.ModIdCard__snoovatarContainer {
+			position: absolute;
+			top: 0;
+			left: 15px;
+			width: unset;
+			padding: 0;
+		}
+		.ModIdCard__snoovatar {
+			height: 100px;
+		}
+
+		.ModIdCard__UserNameLink,
+		.ModIdCard__UserNameMetaData{
+			justify-content: initial;
+		}
+
+		.ModIdCard__UserProfileLink {
+			text-align: initial;
+		}
+	}
+}

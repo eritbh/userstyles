@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Compact Modmail User Info
 @namespace      github.com/openstyles/stylus
-@version        1.0.1
+@version        1.1.0
 @description    Condenses user information in the Reddit modmail sidebar to make more space for
 @author         eritbh
 @license        WTFPL
@@ -14,7 +14,8 @@
 
 @-moz-document domain("mod.reddit.com") {
 	if hideSnoo {
-		.ModIdCard__snoovatarContainer {
+		.ModIdCard__snoovatarContainer,
+ 		.ModIdCard__bannerImage {
 			display: none;
 		}
 		.ModIdCard {
@@ -31,6 +32,9 @@
 			margin-top: 20px;
 			padding-left: 85px;
 		}
+		.ModIdCard:has(.ModIdCard__icon) {
+			height: 80px;
+		}
 		.ModIdCard__snoovatarContainer {
 			position: absolute;
 			top: 0;
@@ -38,9 +42,27 @@
 			width: unset;
 			padding: 0;
 		}
+
+		.ModIdCard__bannerImage {
+			position: absolute;
+			top: -20px;
+			left: 0;
+			width: 100%;
+			height: calc(100% + 20px);
+			margin: 0;
+			padding: 0;
+		}
+		
 		.ModIdCard__snoovatar {
 			height: 100px;
 		}
+		.ModIdCard__icon {
+			margin-top: calc((100px - 60px - (1px * 2)) / 2);
+			width: unset;
+			height: 60px;
+		}
+		
+		/* banner shenanigans */
 
 		.ModIdCard__UserNameLink,
 		.ModIdCard__UserNameMetaData{
@@ -49,6 +71,30 @@
 
 		.ModIdCard__UserProfileLink {
 			text-align: initial;
+		}
+		
+		.ModIdCard__bannerImage ~ .ModIdCard__UserNameContainer .ModIdCard__UserNameLink,
+ 		.ModIdCard__bannerImage ~ .ModIdCard__UserNameMetaData,
+		.ModIdCard__bannerImage ~ .ModIdCard__UserProfileLink {
+			color: black;
+			position: relative;
+			text-shadow:
+				2px 2px white,
+				2px 1px white,
+				2px 0 white,
+				2px -1px white,
+				2px -2px white,
+				1px -2px white,
+				0 -2px white,
+				-1px -2px white,
+				-2px -2px white,
+				-2px -1px white,
+				-2px 0 white,
+				-2px 1px white,
+				-2px 2px white,
+				-1px 2px white,
+				0 2px white,
+				1px 2px white;
 		}
 	}
 }

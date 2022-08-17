@@ -10,6 +10,7 @@
 
 @preprocessor stylus
 @var checkbox hideSnoo "Completely hide snoovatars" 0
+@var checkbox hideToolboxButtons "Hide broken Toolbox sidebar buttons" 0
 ==/UserStyle== */
 
 @-moz-document domain("mod.reddit.com") {
@@ -95,6 +96,12 @@
 				-1px 2px white,
 				0 2px white,
 				1px 2px white;
+		}
+	}
+	
+	if hideToolboxButtons {
+		.tb-jsapi-container.InfoBar__recents {
+			display: none;
 		}
 	}
 }

@@ -1,0 +1,52 @@
+/* ==UserStyle==
+@name           Discord custom font
+@namespace      github.com/openstyles/stylus
+@version        1.0.0
+@description    Lets you customize Discord's fonts and undoes light theme font-weight shenanigans on standard-density displays
+@author         eritbh
+@license        WTFPL
+
+@updateURL https://raw.githubusercontent.com/eritbh/userstyles/main/discord-fonts.user.css
+
+@preprocessor stylus
+@var text fontBody "Body font stack" "system-ui,-apple-system"
+@var text fontCode "Monospace font stack" "ui-monospace,monospace"
+==/UserStyle== */
+
+@-moz-document domain("discord.com") {
+	body {
+		--font-primary: fontBody;
+		--font-code: fontCode;
+		--font-display: var(--font-primary);
+		--font-headline: var(--font-primary);
+	}
+
+	/* revert font-weight garbage */
+	@media (-webkit-max-device-pixel-ratio:1){.theme-light .labelSelected-3_Gssk{font-weight:400!important}}
+	@media (-webkit-max-device-pixel-ratio:1){.theme-light .description-foE_WP{font-weight:400!important}}
+	@media (-webkit-max-device-pixel-ratio:1){
+		.theme-light ::-webkit-input-placeholder,.theme-light input,.theme-light select,.theme-light textarea{font-weight:400!important}
+		.theme-light ::-moz-placeholder,.theme-light input,.theme-light select,.theme-light textarea{font-weight:400!important}
+		.theme-light :-ms-input-placeholder,.theme-light input,.theme-light select,.theme-light textarea{font-weight:400!important}
+		.theme-light ::placeholder,.theme-light input,.theme-light select,.theme-light textarea{font-weight:400!important}
+	}
+	@media (-webkit-max-device-pixel-ratio:1.5){.theme-light{--font-weight-semibold-1x-light-theme:500!important}}
+	@media (-webkit-max-device-pixel-ratio:1){.theme-light .filename-3A5bVl{font-weight:400!important}}
+	@media (-webkit-max-device-pixel-ratio:1){.theme-light .markup-eYLPri{font-weight:400!important}}
+	@media (-webkit-max-device-pixel-ratio:1){.theme-light .embedProvider-1GSN0c{font-weight:400!important}}
+	@media (-webkit-max-device-pixel-ratio:1){.theme-light .embedAuthorName-pGyUPR{font-weight:400!important}}
+	@media (-webkit-max-device-pixel-ratio:1){.theme-light .embedDescription-1DrJxZ{font-weight:400!important}}
+	@media (-webkit-max-device-pixel-ratio:1){.theme-light .embedFooterText-2Mc7H9{font-weight:400!important}}
+	@media (-webkit-max-device-pixel-ratio:1){.theme-light .embedFieldName-9LYSyR{font-weight:500!important}}
+	@media (-webkit-max-device-pixel-ratio:1){.theme-light .embedFieldValue-3EHtvR{font-weight:300!important}}
+	@media (-webkit-max-device-pixel-ratio:1){.theme-light .username-h_Y3Us{font-weight:500!important}}
+	@media (-webkit-max-device-pixel-ratio:1){.theme-light .textArea-2CLwUE{font-weight:400!important}}
+	@media (-webkit-max-device-pixel-ratio:1){.theme-light .ephemeralMessage-11q8XZ{font-weight:400!important}}
+	@media (-webkit-max-device-pixel-ratio:1){
+		.theme-light .content-vSHmMD{font-weight:400!important}
+		.theme-light .content-vSHmMD a{font-weight:500!important}
+	}
+	@media (-webkit-max-device-pixel-ratio:1){.theme-light .timestamp-2qj4__{font-weight:400!important}}
+	@media (-webkit-max-device-pixel-ratio:1){.theme-light .operations-3q3u6E{font-weight:400!important}}
+	@media (-webkit-max-device-pixel-ratio:1){.theme-light .topic-11NuQZ{font-weight:300!important}}
+}

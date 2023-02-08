@@ -1,0 +1,62 @@
+/* ==UserStyle==
+@name           Pinafore customizations
+@namespace      github.com/openstyles/stylus
+@version        1.0.0
+@description    Set custom body fonts and tweak other aspects of Pinafore's UI.
+@author         eritbh
+@license        WTFPL
+
+@updateURL https://raw.githubusercontent.com/eritbh/userstyles/main/pinafore-customization.user.css
+
+@preprocessor stylus
+@var text bodyFont "Body font" "system-ui"
+@var text codeFont "Code font" "monospace"
+@var text customWidth "Timeline width" "602px"
+@var checkbox wrapCode "Text wrapping in code blocks" 1
+@var checkbox blockCodeBackground "Add background and padding to code blocks" 1
+@var checkbox inlineCodeBackground "Add background and slight padding to inline code" 1
+==/UserStyle== */
+
+@-moz-document domain("pinafore.social") {
+	body {
+		font-family: bodyFont;
+	}
+	
+	code {
+		font-family: codeFont;
+	}
+	
+	if codeBlockBackground {
+		pre {
+			padding: 1em;
+			background: var(--body-bg);
+		}
+	}
+	
+	if inlineCodeBackground {
+		code {
+			background: var(--body-bg);
+			padding: 0.125em 0.25em
+		}
+		pre > code {
+			background: none;
+			padding: 0;
+		}
+	}
+	
+	if wrapCode {
+		.status-content pre {
+			white-space: pre-wrap;
+		}
+	} else {
+		.status-content pre {
+			overflow: auto;
+		}		
+	}
+	
+	if customWidth != "" {
+		main {
+			width: customWidth;
+		}
+	}
+}

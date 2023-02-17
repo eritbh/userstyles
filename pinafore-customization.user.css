@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Pinafore customizations
 @namespace      github.com/openstyles/stylus
-@version        1.0.0
+@version        1.1.0
 @description    Set custom body fonts and tweak other aspects of Pinafore's UI.
 @author         eritbh
 @license        WTFPL
@@ -15,6 +15,7 @@
 @var checkbox wrapCode "Text wrapping in code blocks" 1
 @var checkbox blockCodeBackground "Add background and padding to code blocks" 1
 @var checkbox inlineCodeBackground "Add background and slight padding to inline code" 1
+@var checkbox disableBlockquoteItalic "Prevent quotes from being italicized" 1
 ==/UserStyle== */
 
 @-moz-document domain("pinafore.social") {
@@ -57,6 +58,12 @@
 	if customWidth != "" {
 		main {
 			width: customWidth;
+		}
+	}
+	
+	if disableBlockquoteItalic {
+		.status-content blockquote {
+			font-style: inherit;
 		}
 	}
 }

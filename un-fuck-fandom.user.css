@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Un-fuck Fandom
 @namespace      github.com/openstyles/stylus
-@version        1.3.1
+@version        1.4.0
 @description    Gets rid of stupid crap from Fandom wikis
 @author         eritbh
 @license        WTFPL
@@ -23,6 +23,8 @@
 @var checkbox hideMainFooter "Hide global Fandom footer" 1
 @var checkbox hideSurveyPopup "Hide survey popup" 1
 @var checkbox fixDiscordWidgets "Fix alignment of Discord widgets in sidebars" 1
+@var checkbox hideAds "Hide other ad containers" 1
+@var checkbox hideSignupButtons "Hide sign up/log in buttons" 0
 ==/UserStyle== */
 
 @-moz-document domain("fandom.com") {
@@ -129,6 +131,21 @@
 
 	if hideSurveyPopup {
 		#SurveyModule {
+			display: none !important;
+		}
+	}
+	
+	if hideSignupButtons {
+		.ph-registration-buttons {
+			display: none !important;
+		}
+	}
+	
+	if hideAds {
+		.marketing-notifications,
+		.ad-slot-placeholder,
+		.top-ads-container,
+		#incontent_player.gpt-ad {
 			display: none !important;
 		}
 	}

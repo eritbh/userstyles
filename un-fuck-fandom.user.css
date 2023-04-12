@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Un-fuck Fandom
 @namespace      github.com/openstyles/stylus
-@version        1.4.0
+@version        1.4.1
 @description    Gets rid of stupid crap from Fandom wikis
 @author         eritbh
 @license        WTFPL
@@ -112,7 +112,9 @@
 	}
 
 	if hideComments {
-		#articleComments {
+		#articleComments,
+ 		.wds-button[href="#articleComments"],
+		.wds-button[href="#articleComments"] + .wds-button::before {
 			display: none !important;
 		}
 	}

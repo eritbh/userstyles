@@ -1,8 +1,8 @@
 /* ==UserStyle==
-@name           Pinafore customizations
+@name           Pinafore/Semaphore customizations
 @namespace      github.com/openstyles/stylus
-@version        1.1.0
-@description    Set custom body fonts and tweak other aspects of Pinafore's UI.
+@version        1.2.0
+@description    Set custom body fonts and tweak other aspects of Pinafore's and Semaphore's UI.
 @author         eritbh
 @license        WTFPL
 
@@ -18,7 +18,7 @@
 @var checkbox disableBlockquoteItalic "Prevent quotes from being italicized" 1
 ==/UserStyle== */
 
-@-moz-document domain("pinafore.social") {
+@-moz-document domain("pinafore.social"), domain("semaphore.social") {
 	body {
 		font-family: bodyFont;
 	}

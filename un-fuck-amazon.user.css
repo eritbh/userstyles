@@ -1,0 +1,68 @@
+/* ==UserStyle==
+@name           Un-fuck Amazon
+@namespace      github.com/openstyles/stylus
+@version        1.0.0
+@description    Gets rid of stupid crap from Amazon
+@author         eritbh
+@license        WTFPL
+
+@updateURL https://raw.githubusercontent.com/eritbh/userstyles/main/un-fuck-amazon.user.css
+
+@preprocessor stylus
+@var checkbox hidePrimeUpsellSidebar "Hide Prime ad above the buy box" 1
+@var checkbox hideCartFlyout "Hide cart flyout/sidebar when there are items in the cart" 1
+@var checkbox hideProtectionPlans "Hide protection plans from the buy box" 1
+@var checkbox hideAccessories "Hide \"Add an Accessory\" section under buy box" 1
+@var checkbox hideFrequentlyBoughtTogether "Hide \"Frequently Bought Together\" section" 1
+@var checkbox hideFrequentlyBoughtTogether "Hide product videos section" 1
+@var checkbox hideQnA "Hide Q&A section" 0
+==/UserStyle== */
+
+@-moz-document domain("amazon.com") {
+	if hidePrimeUpsellSidebar {
+		#primeDPUpsellContainer {
+			display: none !important;
+		}
+	}
+	
+	if hideCartFlyout {
+		#nav-flyout-ewc,
+ 		#nav-flyout-iss-anchor,
+		#nav-flyout-anchor {
+			display: none !important;
+		}
+		.nav-ewc-persistent-hover body {
+			padding-right: 0 !important;
+		}
+	}
+	
+	if hideProtectionPlans {
+		#mbb_feature_div {
+			display: none !important;
+		}
+	}
+	
+	if hideAccessories {
+		#simpleBundleV2_feature_div {
+			display: none !important;
+		}
+	}
+	
+	if hideFrequentlyBoughtTogether {
+		#similarities_feature_div {
+			display: none !important;
+		}
+	}
+	
+	if hideVideos {
+		#va-related-videos-widget_feature_div {
+			display: none !important;
+		}
+	}
+	
+	if hideQnA {
+		#ask-btf_feature_div {
+			display: none !important;
+		}
+	}
+}

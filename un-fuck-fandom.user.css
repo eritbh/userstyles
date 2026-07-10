@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Un-fuck Fandom
 @namespace      github.com/openstyles/stylus
-@version        1.4.1
+@version        1.5.0
 @description    Gets rid of stupid crap from Fandom wikis
 @author         eritbh
 @license        WTFPL
@@ -41,10 +41,13 @@
 		.fandom-sticky-header {
 			display: none !important;
 		}
+		.global-top-navigation {
+			position: absolute !important;
+		}
 	}
 
 	if hideGlobalNav {
-		.global-navigation {
+		.global-navigation, .global-explore-navigation {
 			display: none !important;
 		}
 
